@@ -22,7 +22,7 @@ stages:
           - task: TerraformInstaller@0
             displayName: "Install Terraform"
             inputs:
-              terraformVersion: '1.6.0' # Replace with a stable version
+              terraformVersion: '1.6.0' # Ensure you use a stable version
 
           - script: |
               terraform init \
