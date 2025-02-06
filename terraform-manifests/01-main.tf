@@ -27,12 +27,12 @@ terraform {
   }
 
 # Terraform State Storage to Azure Storage Container
-  backend "azurerm" {
+ /*  backend "azurerm" {
     resource_group_name   = "terraform-storage-rg-arup"
     storage_account_name  = "arupbackndtffile"
     container_name        = "tfstatefiles"
     key                   = "dev.terraform.tfstate"
-  }  
+  }   */
 }
 
 
