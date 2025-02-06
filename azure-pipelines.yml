@@ -22,7 +22,16 @@ stages:
           - task: TerraformInstaller@0
             displayName: "Install Terraform"
             inputs:
-              terraformVersion: '1.6.0' # Ensure you use a stable version
+              terraformVersion: '1.6.0' # Ensure a stable version
+
+          # 🔥 Authenticate with Azure using a Service Connection
+          - task: AzureCLI@2
+            displayName: "Azure Login"
+            inputs:
+              azureSubscription: "terraform-aks-azurerm-svc-con"  # 🔹 Replace with your actual service connection name
+              scriptType: "bash"
+              scriptLocation: "inlineScript"
+              inlineScript: "az account show"
 
           - script: |
               terraform init \
